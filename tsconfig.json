@@ -1,33 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "allowJs": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "moduleResolution": "node",
-    "baseUrl": "./src",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "src/@types"
-    ],
-    "paths": {
-      "@app/*": ["app/*"],
-      "@config/*": ["config/*"],
-      "@services/*": ["services/*"],
-      "@models/*": ["models/*"],
-      "@schemas/*": ["schemas/*"],
-      "@queues/*": ["queues/*"],
-      "@utils/*": ["utils/*"]
-    }
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist"
   },
-  "include": ["src", "typings.d.ts"]
+  "lib": ["es2015"]
 }
