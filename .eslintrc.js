@@ -24,6 +24,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     'camelcase': 'off',
+    'lines-between-class-members': 'off',
     'no-unused-vars': ['error', { 'argsIgnorePattern': 'next' }],
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'as-needed'],
