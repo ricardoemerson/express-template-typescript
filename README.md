@@ -9,6 +9,7 @@
 - Sucrase for allow use ES6 import/exports in project;
 - Nodemon for automatically restart the server when changes was maded in project.
 - ExceptionHandler with express-async-errors and youch for treat exceptions in async calls and better return of errors for developer.
+- Add a class Cache.js for cache control.
 
 ## Running the Project
 
