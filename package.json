@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
     "dev:debug": "tsnd --inspect --respawn src/server.ts",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+    "build": "ts-node src/server.ts"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
