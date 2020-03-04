@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon src/server.ts",
-    "dev:debug": "nodemon --inspect src/server.ts",
+    "dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
+    "dev:debug": "tsnd --inspect --respawn src/server.ts",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "devDependencies": {
@@ -22,8 +22,7 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-import-helpers": "^1.0.2",
-    "nodemon": "^2.0.2",
-    "sucrase": "^3.12.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.5"
   },
