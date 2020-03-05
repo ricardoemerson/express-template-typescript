@@ -26,6 +26,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/ioredis": "^4.14.8",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

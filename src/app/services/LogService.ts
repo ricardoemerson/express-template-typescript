@@ -1,4 +1,4 @@
-import {
+import winston, {
   createLogger, format, transports, Logger,
 } from 'winston';
 
@@ -16,13 +16,14 @@ class LogService {
 
   private winston() {
     const {
-      combine, timestamp, prettyPrint,
+      combine, timestamp, colorize, simple,
     } = format;
 
     this.logger = createLogger({
       format: combine(
         timestamp(),
-        prettyPrint(),
+        colorize(),
+        simple(),
       ),
       transports: [
         new transports.Console(),
@@ -30,6 +31,7 @@ class LogService {
           filename: './src/logs/error.log',
           level: 'error',
           ...this.baseOptions,
+
         }),
         new transports.File({
           filename: './src/logs/info.log',
