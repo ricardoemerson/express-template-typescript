@@ -4,7 +4,9 @@ import express, {
   Request, Response, NextFunction,
 } from 'express';
 import morgan from 'morgan';
-import winston, { Logger, stream } from 'winston';
+import {
+  createLogger, format, transports, Logger,
+} from 'winston';
 import Youch from 'youch';
 
 import 'express-async-errors';
@@ -12,15 +14,13 @@ import 'express-async-errors';
 import routes from './routes';
 
 import HttpException from './config/HttpException';
-import options from './config/winston';
 
 class App {
   express: express.Application;
-  logger: Logger;
+  logger!: Logger;
 
   constructor() {
     this.express = express();
-
     this.winston();
     this.middlewares();
     this.routes();
@@ -38,13 +38,21 @@ class App {
   }
 
   private winston() {
-    this.logger = winston.createLogger({
-      transports: [
-        new winston.transports.File(options.file),
-        new winston.transports.Console(options.console),
-      ],
+    const {
+      combine, timestamp, prettyPrint,
+    } = format;
 
-      exitOnError: false, // do not exit on handled exceptions
+    this.logger = createLogger({
+      format: combine(
+        timestamp(),
+        prettyPrint(),
+      ),
+      transports: [
+        new transports.Console(),
+        new transports.File({ filename: './src/logs/error.log', level: 'error' }),
+        new transports.File({ filename: './src/logs/info.log', level: 'info' }),
+      ],
+      exitOnError: false,
     });
   }
 
