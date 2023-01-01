@@ -22,7 +22,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-import-helpers": "^1.0.2",
     "ts-node-dev": "^1.0.0-pre.44",
-    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
